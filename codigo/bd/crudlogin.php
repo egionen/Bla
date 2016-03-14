@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
   include_once 'conecta.php';
 
   $aluno  =   $_POST['aluno'];
@@ -33,5 +33,23 @@
     $mysqli->query("UPDATE logins SET user = $user, pass = $pass WHERE idlogins
       = $aluno")or die("erro na edicao de logins");
 
-  }//fim se editar 
+  }//fim se editar
+  if(isset($_POST['entrar'])){
+
+    $result = $mysqli->query("SELECT * FROM logins WHERE user = '$user' and pass = '$pass'")or die($mysqli->error);
+    $resultlogin = $result->fetch_assoc();
+
+
+
+    if($resultlogin != null){
+      $id = $resultlogin['idlogins'];
+      $result = $mysqli->query("SELECT * FROM alunos WHERE matricula = $id")or die($mysqli->error);
+      $resultaluno = $result->fetch_assoc();
+      $_SESSION['user'] = $user;
+      $_SESSION['pass'] = $pass;
+      $_SESSION['aluno'] = $resultaluno['nome'];
+      echo "<script>window.location='../paginas/home.php'</script>";
+
+    }
+  }
  ?>

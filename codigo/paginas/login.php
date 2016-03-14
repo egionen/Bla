@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once 'cabecalho.php';
 
  ?>
@@ -27,11 +27,11 @@ include_once 'cabecalho.php';
 
             <h4>Login</h4>
             <br>
-            
+
           </div>
 
 
-            <form action="home.php" method="post">
+            <form action="../bd/crudlogin.php" method="post" name="entrar">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="user" name="user">
                 <label class="mdl-textfield__label" for="user">Usuario</label>
@@ -44,7 +44,7 @@ include_once 'cabecalho.php';
               </div>
 
               <div class="mdl-cell mdl-cell--6-col mdl-cell--1-offset">
-              <input type="submit" value="Entrar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" name="listar" >
+              <input type="submit" value="Entrar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" name="entrar" >
               </div>
 
 </form>
