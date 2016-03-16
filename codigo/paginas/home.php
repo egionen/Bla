@@ -33,10 +33,13 @@ width: 512px;
      <a class="mdl-navigation__link" href="perfil.php"><i class="material-icons">person</i>Perfil</a>
      <a class="mdl-navigation__link" href="calendario.php"><i class="material-icons">today</i>Calendario</a>
      <a class="mdl-navigation__link" href="historico.php"><i class="material-icons">assessment</i>Historico</a>
-     <a class="mdl-navigation__link" href="turma.php"><i class="material-icons">people</i>Turmas</a>
+     <a class="mdl-navigation__link" href="turmas.php"><i class="material-icons">people</i>Turmas</a>
    </nav>
  </div>
  <main class="mdl-layout__content">
+   
+
+
    <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--3-col"></div>
   <div class="mdl-cell mdl-cell--4-col">
@@ -71,6 +74,7 @@ width: 512px;
         </div>
         </div>
   </div>
+
     <div class="mdl-cell mdl-cell--4-col">
       <br><br><br><br>
         <div class="mdl-card mdl-shadow--6dp">
@@ -88,6 +92,8 @@ width: 512px;
         </div>
         </div>
     </div>
+
+
 
         <div class="mdl-card mdl-shadow--6dp" style="background-color:red;min-height:10px;width:5024px"></div>
         <div class="mdl-cell--3-col"></div>
