@@ -1,4 +1,5 @@
 <?php
+  error_reporting(0);
   session_start();
   include_once 'conecta.php';
 
@@ -49,6 +50,10 @@
       $_SESSION['pass'] = $pass;
       $_SESSION['aluno'] = $resultaluno['nome'];
       echo "<script>window.location='../paginas/home.php'</script>";
+
+    }else{
+
+      echo "<script>window.location='../paginas/login.php?error=1'</script>";
 
     }
   }

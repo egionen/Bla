@@ -1,11 +1,13 @@
 <?php
 $sair = 0;
+$error = 0;
 //abre sessão
 session_start();
 //inclui cabecalho
 include_once 'cabecalho.php';
 if($sair != 0){
   session_destroy();}
+
 
  ?>
 <!DOCTYPE html>
