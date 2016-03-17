@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="../modal/remodal.css">
     <link rel="stylesheet" href="../modal/remodal-default-theme.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="../select/select2.min.css" rel="stylesheet"/>
+
   </head>
   <body>
-
     <script src="../jquery.min.js"></script>
+    <script src="../select/select2.min.js"></script>
     <script src="../modal/remodal.min.js"></script>
-  </body>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $(".js-example-basic-single").select2();
+    });
+</script>
+    </body>
 </html>

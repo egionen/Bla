@@ -8,9 +8,15 @@
   $pass   =   $_POST['pass'];
   //se inserir
   if(isset($_POST['inserir'])){
-
+    $result = $mysqli->query("SELECT * FROM logins WHERE user = $user");
+    $lista = $result->fetch_assoc();
+    if($lista == null){
     $mysqli->query("INSERT INTO logins (user,pass) values($user,$pass)")or die
     ("erro na inserção de logins");
+  }else{
+
+    echo "erro";
+  }
 
   }//fim se inserir
   //se listar
