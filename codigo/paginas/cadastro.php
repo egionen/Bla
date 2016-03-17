@@ -39,10 +39,18 @@ include_once 'cabecalho.php';
                     <label class="mdl-textfield__label" for="nasc">Data de Nascimento</label>
                   </div>
                   <div class="mdl-cell mdl-cell--12-col">
-                    <select class="js-example-basic-single">
-                      <option value="AL">Alabama</option>
-                      <option value="WY">Wyoming</option>
-</select>
+                    <select class="js-example-basic-single" style="width: 50%">
+                      <?php $sql = "SELECT * FROM cidades";
+                      $con = $mysqli->query($sql) or die($mysqli->error);
+                      $dados = $con->fetch_assoc();
+                      $total = $con->num_rows;
+                      if ($total > 0) {
+                          do {
+                              ?> <option  value="<?php echo $dados['idcidades'] ?>"><?php echo $dados['nome'] ?></option><?php
+                          } while ($dados = mysqli_fetch_assoc($con));
+                      }
+                      ?>
+                    </select>
                   </div>
 
 
