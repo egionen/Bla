@@ -4,6 +4,7 @@ $sair = 0;
 session_start();
 //inclui cabecalho
 include_once 'cabecalho.php';
+include_once '../bd/conecta.php';
 if($sair != 0){
   session_destroy();}
   ?>
@@ -67,6 +68,23 @@ if($sair != 0){
                 <input class="mdl-textfield__input" type="text" id="nasc" name="nasc">
                 <label class="mdl-textfield__label" for="nasc">Data de Nascimento</label>
               </div>
+
+              <div class="mdl-cell mdl-cell--12-col">
+              <select class="wide" name="cidade">
+
+                        <?php $sql = "SELECT * FROM cidades";
+                        $con = $mysqli->query($sql) or die($mysqli->error);
+                        $dados = $con->fetch_assoc();
+                        $total = $con->num_rows;
+                        if ($total > 0) {
+                          do {
+                            ?> <option  value="<?php echo $dados['idcidades'] ?>"><?php echo $dados['nome'] ?></option><?php
+                          } while ($dados = mysqli_fetch_assoc($con));
+                        }
+                        ?>
+                      </select>
+                      </div>
+                      <br><br><br>
               <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" name="inserir" value="Confirmar">
             </form>
           </div>
