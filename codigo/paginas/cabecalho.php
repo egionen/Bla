@@ -11,12 +11,16 @@
   <link rel="stylesheet" href="../modal/sweetalert2.css">
 
 
+
 </head>
 <body>
   <script src="../jquery.min.js"></script>
+  <script src="../calendario/simplecalendar.js" type="text/javascript"></script>
+  <script src="../calendario/style.css"></script>
   <script src="../select/jquery.nice-select.js"></script>
   <script src="../modal/remodal.min.js"></script>
   <script src="../modal/sweetalert2.min.js"></script>
+
   <script type="text/javascript">
   $(document).ready(function() {
       $('select').niceSelect();
