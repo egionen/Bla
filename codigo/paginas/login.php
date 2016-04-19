@@ -1,6 +1,4 @@
 <?php
-
-
 //inclui cabecalho
 include_once 'cabecalho.php';
 include_once '../bd/conecta.php';
@@ -46,58 +44,6 @@ session_unset();
           </div>
         </div>
       </main>
-    </div>
-    <div class="remodal" data-remodal-id="cadastro">
-      <button data-remodal-action="close" class="remodal-close"></button>
-      <h1>Cadastro</h1>
-      <p>
-        <div class="mdl-grid">
-          <div class="mdl-cell mdl-cell--12-col">
-            <form action="../bd/crudaluno.php" method="post" name="inserir">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--10-col">
-                <input class="mdl-textfield__input" type="text" id="nome" name="nome">
-                <label class="mdl-textfield__label" for="nome">Nome</label>
-              </div>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--10-col">
-                <input class="mdl-textfield__input" type="text" id="email" name="email">
-                <label class="mdl-textfield__label" for="email">E-mail</label>
-              </div>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--10-col">
-                <input class="mdl-textfield__input" type="text" id="nasc" name="nasc">
-                <label class="mdl-textfield__label" for="nasc">Data de Nascimento</label>
-              </div>
-
-              <div class="mdl-cell mdl-cell--12-col">
-              <select class="wide" name="cidade">
-
-                        <?php $sql = "SELECT * FROM cidades";
-                        $con = $mysqli->query($sql) or die($mysqli->error);
-                        $dados = $con->fetch_assoc();
-                        $total = $con->num_rows;
-                        if ($total > 0) {
-                          do {
-                            ?> <option  value="<?php echo $dados['idcidades'] ?>"><?php echo $dados['nome'] ?></option><?php
-                          } while ($dados = mysqli_fetch_assoc($con));
-                        }
-                        ?>
-                      </select>
-                      </div>
-                      <br><br><br>
-              <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" name="inserir" value="Confirmar">
-            </form>
-          </div>
-        </div>
-      </p>
-    </div>
-    <br>
-    <div class="remodal" data-remodal-id="error">
-      <button data-remodal-action="close" class="remodal-close"></button>
-      <h1>Opa</h1>
-      <p>
-        Já existe uma conta com esse email
-      </p>
-      <br>
-      <a href="#cadastro" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Ok</a>
     </div>
   </body>
   </html>
