@@ -17,22 +17,14 @@
     if($lista == null)
     {
 
-
+      //especificar erro
 
     }else{
 
-      
-
-
+      $mysqli->query("INSERT INTO login (user,pass) values('$user','$pass')")or
+      die($mysqli->error);
+      echo "<script>window.location.href = '../paginas/login.php'</script>"
     }
-
-
-
-
-    //$mysqli->query("INSERT INTO login (user,pass) values('$user','$pass')")or
-    //die($mysqli->error);
-
-
   }
 
 

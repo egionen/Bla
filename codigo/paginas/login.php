@@ -1,12 +1,10 @@
 <?php
-$sair = 0;
-//abre sessão
-session_start();
+
+
 //inclui cabecalho
 include_once 'cabecalho.php';
 include_once '../bd/conecta.php';
-if($sair != 0){
-  session_destroy();}
+session_unset();
   ?>
   <!DOCTYPE html>
   <html>
